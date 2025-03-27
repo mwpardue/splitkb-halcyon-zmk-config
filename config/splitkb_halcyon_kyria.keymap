@@ -360,9 +360,9 @@
         symbol_layer {
             label = "Symbol";
             bindings = <
-            &bootloader &trans &trans   &kp LBKT &kp RBKT &tips                                       &trans &kp AMPS   &kp STAR    &kp LPAR  &trans &bootloader
+            &bootloader &trans &trans   &kp LBRC &kp RBRC &tips                                       &trans &kp AMPS   &kp STAR    &kp LPAR  &trans &bootloader
             &trans      &kp AT &kp BSLH &kp LPAR &kp RPAR &kp PIPE                                    &trans &kp DOLLAR &kp PERCENT &kp CARET &trans &trans
-            &trans      &trans &trans   &kp LBRC &kp RBRC &trans &trans   &trans     &trans &trans    &trans &kp EXCL   &kp AT      &kp HASH  &trans &trans
+            &trans      &trans &trans   &kp LBKT &kp RBKT &trans &trans   &trans     &trans &trans    &trans &kp EXCL   &kp AT      &kp HASH  &trans &trans
                                         &trans   &trans   &trans &kp BSPC &trans     &trans  &trans   &trans &trans     &trans
             >;
         };
