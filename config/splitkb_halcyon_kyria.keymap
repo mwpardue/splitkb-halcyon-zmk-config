@@ -279,7 +279,7 @@
 
     combo_esc {
       timeout-ms = <50>;
-      key-positions = <15 16>;
+      key-positions = <14 15>;
       bindings = <&kp ESC>;
       require-prior-idle-ms = <250>;
       layers = <BAS_L>;
@@ -342,7 +342,7 @@
             bindings = <
             &trans &trans    &trans   &trans    &trans   &trans                                   &trans   &trans       &trans       &trans       &trans &trans
             &trans &sk LCTRL &sk LALT &sk LSHFT &sk LGUI &trans                                   &kp LEFT &kp DOWN     &kp UP       &kp RIGHT    &trans &trans
-            &trans &trans    &trans   &trans    &trans   &trans &trans &trans      &trans &trans  &trans   &kp MON_LEFT &kp MON_DOWN &kp MON_RGHT &trans &trans
+            &trans &trans    &trans   &tdcopy   &tdpaste &trans &trans &trans      &trans &trans  &trans   &kp MON_LEFT &kp MON_DOWN &kp MON_RGHT &trans &trans
                                        &trans   &trans   &trans &trans &trans      &trans &kp RET &trans   &trans       &trans
             >;
         };
