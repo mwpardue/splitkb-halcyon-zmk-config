@@ -20,7 +20,7 @@
 ---
 include:
   - board: splitkb_halcyon_controller
-    shield: splitkb_halcyon_kyria_left splitkb_halcyon_dislay_mod
+    shield: splitkb_halcyon_kyria_left
   - board: splitkb_halcyon_controller
     shield: splitkb_halcyon_kyria_right
   # - board: splitkb_halcyon_controller
