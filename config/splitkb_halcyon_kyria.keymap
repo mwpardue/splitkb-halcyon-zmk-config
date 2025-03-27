@@ -107,7 +107,7 @@
             bindings = <
             &kp ESC   &kp Q &kp W &kp F &kp P &kp B                                                 &kp J &kp L  &kp U     &kp Y   &kp QUOT &kp BSLH
             &kp TAB   &kp A &kp R &kp S &kp T &kp G                                                 &kp M &kp N  &kp E     &kp I   &kp O    &kp SQT
-            &kp LSHFT &kp Z &kp X &kp C &kp D &kp V &kp LSHFT &kp LSHFT            &trans &kp LSHFT &kp K &kp H  &kp COMMA &kp DOT &kp SEMI &kp RCTRL
+            &bootloader &kp Z &kp X &kp C &kp D &kp V &kp LSHFT &kp LSHFT            &trans &kp LSHFT &kp K &kp H  &kp COMMA &kp DOT &kp SEMI &bootloader
                               &studio_unlock &kp DEL &mo NAV_L &shifty &kp ESC    &kp RET &kp SPACE &mo NUM_L &kp BSPC &kp RALT
             >;
 
