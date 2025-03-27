@@ -273,14 +273,6 @@
 
     };
 
-    cond_layers {
-        compatible = "zmk,conditional-layers";
-	tri {
-	    if-layers = <NUM_L NAV_L>;
-	    then-layer = <MED_L>;
-        };
-    };
-
     combos {
         compatible = "zmk,combos";
 
