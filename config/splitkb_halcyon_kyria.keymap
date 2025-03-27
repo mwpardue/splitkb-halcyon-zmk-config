@@ -11,6 +11,76 @@
 #define NUM_L 2
 #define MED_L 3
 
+
+#undef EXCL
+#define EXCL LS(N1)
+#undef AT
+#define AT LS(N2)
+#undef HASH
+#define HASH LS(N3)
+#undef DOLLAR
+#define DOLLAR LS(N4)
+#undef PERCENT
+#define PERCENT LS(N5)
+#undef CARET
+#define CARET LS(N6)
+#undef AMPS
+#define AMPS LS(N7)
+#undef STAR
+#define STAR LS(N8)
+#undef LEFT_PARENTHESIS
+#define LEFT_PARENTHESIS LS(N9)
+#undef COLON
+#define COLON LS(SEMI)
+#undef LEFT_BRACE
+#define LEFT_BRACE LS(LBKT)
+#undef RIGHT_BRACE
+#define RIGHT_BRACE LS(RBKT)
+#undef UNDERSCORE
+#define UNDERSCORE LS(MINUS)
+#undef PIPE
+#define PIPE LS(BSLH)
+#undef DQT
+#define DQT LS(SINGLE_QUOTE)
+#undef PLUS
+#define PLUS LS(EQUAL)
+#undef LT
+#define LT LS(COMMA)
+#undef GT
+#define GT LS(DOT)
+
+#undef TAB_LEFT
+#define TAB_LEFT LG(H)
+#undef TAB_RGHT
+#define TAB_RGHT LG(L)
+#undef MON_LEFT
+#define MON_LEFT LC(LEFT_ARROW)
+#undef MON_RGHT
+#define MON_RGHT LC(RIGHT_ARROW)
+#undef SPC_LEFT
+#define SPC_LEFT LC(LA(LEFT_ARROW))
+#undef SPC_RGHT
+#define SPC_RGHT LC(LA(RIGHT_ARROW))
+#undef WDW_LEFT
+#define WDW_LEFT LA(LEFT_ARROW)
+#undef WDW_RGHT
+#define WDW_RGHT LA(RIGHT_ARROW)
+#undef SCRL_UP
+#define SCRL_UP LA(LG(LC(UP_ARROW)))
+#undef SCRL_DN
+#define SCRL_DN LA(LG(LC(DOWN_ARROW)))
+#undef HYPR
+#define HYPR LC(LA(LS(LGUI)))
+#undef MEH
+#define MEH LA(LS(LCTRL))
+#undef LSTHUMB
+#define LSTHUMB lscw
+#undef RSTHUMB
+#define RSTHUMB rscw
+
+#define LEFT_ALPHAS 1 2 3 4 5 13 14 15 16 17 25 26 27 28 29
+#define RIGHT_ALPHAS 6 7 8 9 10 18 19 20 21 22 34 35 36 37 38
+
 /* Uncomment this block if using RGB
 &led_strip {
     chain-length = <6>;
@@ -20,6 +90,107 @@
  */
 
 / {
+
+        lhm: left_hand_homerow_mods {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LEFT_HOMEROW_MODS";
+            #binding-cells = <2>;
+            tapping-term-ms = <250>;
+            quick-tap-ms = <200>;
+            require-prior-idle-ms = <250>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = <RIGHT_ALPHAS>;
+            hold-trigger-on-release;
+        };
+
+        rhm: right_hand_homerow_mods {
+            compatible = "zmk,behavior-hold-tap";
+            label = "RIGHT_HOMEROW_MODS";
+            #binding-cells = <2>;
+            tapping-term-ms = <250>;
+            quick-tap-ms = <200>;
+            require-prior-idle-ms = <250>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = <LEFT_ALPHAS>;
+            hold-trigger-on-release;
+        };
+
+        lshm: left_hand_shift {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LEFT_HOMEROW_SHIFT";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <150>;
+            require-prior-idle-ms = <250>;
+            flavor = "balanced";
+            bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = <RIGHT_ALPHAS>;
+            hold-trigger-on-release;
+        };
+
+        rshm: right_hand_shift {
+            compatible = "zmk,behavior-hold-tap";
+            label = "RIGHT_HOMEROW_SHIFT";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <150>;
+            require-prior-idle-ms = <250>;
+            flavor = "balanced";
+            bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = <LEFT_ALPHAS>;
+            hold-trigger-on-release;
+        };
+
+        lsthm: left_hand_tap_shift {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LEFT_HOMEROW_TAP_SHIFT";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <150>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = <RIGHT_ALPHAS>;
+            hold-trigger-on-release;
+        };
+
+        rsthm: right_hand_tap_shift {
+            compatible = "zmk,behavior-hold-tap";
+            label = "RIGHT_HOMEROW_TAP_SHIFT";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <150>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = <LEFT_ALPHAS>;
+            hold-trigger-on-release;
+        };
+
+        lslm: left_hand_lower_shift {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LEFT_LOWER_SHIFT";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <150>;
+            flavor = "hold-preferred";
+            bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = <RIGHT_ALPHAS>;
+            hold-trigger-on-release;
+        };
+
+        rslm: right_hand_lower_shift {
+            compatible = "zmk,behavior-hold-tap";
+            label = "RIGHT_LOWER_SHIFT";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <150>;
+            flavor = "hold-preferred";
+            bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = <LEFT_ALPHAS>;
+            hold-trigger-on-release;
+        };
+
     tap_dances {
        shifty: shift_caps_word {
 		compatible = "zmk,behavior-tap-dance";
@@ -94,7 +265,6 @@
 	};
     };
 
-
     keymap {
         compatible = "zmk,keymap";
 
@@ -105,10 +275,10 @@
             // | SHIFT |  Z  |  X  |  C   |  V   |  B   | L SHIFT | L SHIFT |  | LAYER 1 | L SHIFT |  N   |  M    |  ,    |  .   |   /   | CTRL |
             //                     | GUI  | DEL  | RET  |  SPACE  |   ESC   |  |   RET   |  SPACE  | TAB  | BSPC  | R-ALT |
             bindings = <
-            &kp ESC   &kp Q &kp W &kp E &kp R &kp T                                                 &kp Y &kp U  &kp I     &kp O   &kp P    &kp BSLH
-            &kp TAB   &kp A &kp S &kp D &kp F &kp G                                                 &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
-            &bootloader &kp Z &kp X &kp C &kp V &kp B &kp LSHFT &kp LSHFT            &trans &kp LSHFT &kp N &kp M  &kp COMMA &kp DOT &kp SEMI &bootloader
-                              &studio_unlock &kp DEL &mo NAV_L &shifty &kp ESC    &kp RET &kp SPACE &mo NUM_L &kp BSPC &kp RALT
+            &kp ESC     &kp Q        &kp W       &kp E         &kp R       &kp T                                          &kp Y &kp U       &kp I         &kp O       &kp P           &kp BSLH
+            &kp TAB     &lhm LCTRL A &lhm LALT S &lshm LSHFT D &lhm LGUI F &kp G                                          &kp H &rhm RGUI J &rshm RSHFT K &rhm RALT L &rhm RCTRL SEMI &kp SQT
+            &bootloader &kp Z        &kp X       &kp C         &kp V       &kp B &kp LSHFT &kp LSHFT    &trans &kp LSHFT &kp N  &kp M       &kp COMMA     &kp DOT     &kp SEMI        &bootloader
+                                                    &studio_unlock &kp DEL &mo NAV_L &kp BSPC &kp RET   &kp RET &kp SPACE &mo NUM_L &kp BSPC &kp RALT
             >;
 
             // sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
